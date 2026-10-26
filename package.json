@@ -1,0 +1,23 @@
+{
+  "name": "fintrack",
+  "version": "1.0.0",
+  "description": "FinTrack - Expense Tracker",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm run dev",
+    "client": "cd frontend && npm start",
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "mongodb": "^3.6.0",
+    "jsonwebtoken": "^8.5.1"
+  },
+  "config": {
+    "MONGODB_URI": "mongodb://127.0.0.1:27017/fintrack",
+    "JWT_SECRET": "your_long_random_secret",
+    "JWT_EXPIRE": "30d"
+  }
+}
